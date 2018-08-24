@@ -11,12 +11,13 @@ int main(){
 		cin>>a[i];
 	}
 	for(int i=1;i<n+1;i++){
-		for(int j=i;j<n;j++){
-			if(a[j+1]>a[j]){
+		for(int j=1;j<n;j++){
+			if(a[j+1]<a[j]){
 				temp=a[j+1];
 				a[j+1]=a[j];
 				a[j]=temp;	
 			}
+			
 		}
 	}
 	cout<<a[2]-a[1]<<endl;	
