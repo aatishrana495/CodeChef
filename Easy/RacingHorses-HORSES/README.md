@@ -26,4 +26,4 @@ Input:
 Output:
 3
 
-status:not submitted
+status:submitted

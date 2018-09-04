@@ -1,24 +1,25 @@
 #include<iostream>
+#include<cstdlib>
+#include<algorithm>
 using namespace std;
 
 int main(){
-	long long int t,n,temp;
+	int t,n;
 	cin>>t;
-	cin>>n;
-	long long int a[n+1];
-	a[0]=0;
-	for(int i=1;i<n+1;i++){
-		cin>>a[i];
-	}
-	for(int i=1;i<n+1;i++){
-		for(int j=1;j<n;j++){
-			if(a[j+1]<a[j]){
-				temp=a[j+1];
-				a[j+1]=a[j];
-				a[j]=temp;	
-			}
-			
+	int min;
+	for(int i=0;i<t;i++){
+		cin>>n;
+		int a[n];
+		for(int j=0;j<n;j++){
+			cin>>a[j];
 		}
+		sort(a,a+n);
+		min=a[1]-a[0];
+		for(int j=1;j<n-1;j++){
+			if(min>a[j+1]-a[j]){
+				min=a[j+1]-a[j];
+			}
+		}
+		cout<<min<<endl;	
 	}
-	cout<<a[2]-a[1]<<endl;	
 }
